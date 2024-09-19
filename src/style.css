@@ -1,0 +1,30 @@
+.load-more {
+  display: inline-block;
+}
+
+.load-more-hidden {
+  display: none;
+}
+
+.progress {
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: none;
+  place-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.progress-value {
+  display: block;
+  background-color: #fff;
+  width: calc(100% - 15px);
+  height: calc(100% - 15px);
+  border-radius: 50%;
+  font-size: 30px;
+  display: grid;
+  place-items: center;
+}
