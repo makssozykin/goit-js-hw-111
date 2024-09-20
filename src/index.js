@@ -7,6 +7,7 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 const form = document.querySelector('.search-form');
 const gallery = document.querySelector('.gallery');
 loadMoreBtn = document.querySelector('.load-more');
+loadMoreBtn.classList.replace('load-more', 'load-more-hidden');
 
 window.onscroll = calcScrollValue;
 window.onload = calcScrollValue;
@@ -38,15 +39,17 @@ function onSubmit(e) {
   clearPage();
   search.query = e.target.searchQuery.value.trim().toLowerCase();
   if (search.query === '') {
-    loadMoreBtn.disabled = true;
+    // loadMoreBtn.disabled = true;
+    loadMoreBtn.classList.replace('load-more', 'load-more-hidden');
 
     setTimeout(() => {
       Notiflix.Notify.failure(
         'The search string cannot be empty. Please specify your search query.'
       );
-      loadMoreBtn.disabled = false;
+      //   loadMoreBtn.classList.replace('load-more-hidden', 'load-more');
+
+      //   loadMoreBtn.disabled = false;
     }, 1000);
-    // loadMoreBtn.classList.replace('load-more-hidden', 'load-more');
     return;
   }
   searchImages().then(data => {
